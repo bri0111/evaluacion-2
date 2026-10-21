@@ -1,0 +1,188 @@
+
+.mascota-gato {
+  position: fixed;
+  right: 20px;
+  bottom: 12px;
+  z-index: 9999;
+  width: 155px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.gato-boton {
+  position: relative;
+  width: 155px;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto;
+  animation: gato-flotar 3s ease-in-out infinite;
+}
+
+.gato-imagen {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  user-select: none;
+  filter: drop-shadow(0 5px 8px #0003);
+  transition: transform 0.25s ease;
+}
+
+.gato-boton:hover .gato-imagen {
+  transform: scale(1.06) rotate(-3deg);
+}
+
+/* Cola que se mueve detrás del gatito */
+.gato-cola {
+  position: absolute;
+  z-index: 1;
+  width: 75px;
+  height: 75px;
+  top: 43px;
+  right: -1px;
+  transform-origin: 15% 80%;
+  animation: gato-mueve-cola 1s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.gato-cola svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Flotación suave */
+@keyframes gato-flotar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Movimiento de la cola */
+@keyframes gato-mueve-cola {
+  from {
+    transform: rotate(-22deg);
+  }
+  to {
+    transform: rotate(24deg);
+  }
+}
+
+/* Burbuja de maullido */
+.gato-burbuja {
+  position: absolute;
+  bottom: 145px;
+  left: 50%;
+  z-index: 5;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  min-width: 145px;
+  padding: 12px 15px;
+  border: 1px solid #a65c7b;
+  border-radius: 16px 16px 16px 4px;
+  background: #241a23;
+  color: #f8e7ef;
+  box-shadow: 0 5px 18px #0003;
+  animation: burbuja-entra 0.25s ease-out;
+  pointer-events: none;
+}
+
+.gato-burbuja::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 22px;
+  width: 12px;
+  height: 12px;
+  background: #241a23;
+  border-right: 1px solid #a65c7b;
+  border-bottom: 1px solid #a65c7b;
+  transform: rotate(45deg);
+}
+
+.gato-texto {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  color: #f0c4d9;
+}
+
+.gato-subtexto {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #d4afc2;
+  white-space: nowrap;
+}
+
+.gato-pista {
+  position: relative;
+  z-index: 3;
+  margin-top: -5px;
+  color: #d9a1bc;
+  font-family: monospace;
+  font-size: 10px;
+  text-shadow: 0 1px 4px #000;
+}
+
+@keyframes burbuja-entra {
+  from {
+    opacity: 0;
+    margin-bottom: -8px;
+  }
+  to {
+    opacity: 1;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .mascota-gato {
+    right: 7px;
+    bottom: 8px;
+    width: 110px;
+  }
+
+  .gato-boton {
+    width: 110px;
+  }
+
+  .gato-imagen {
+    width: 108px;
+    height: 108px;
+  }
+
+  .gato-cola {
+    width: 55px;
+    height: 55px;
+    top: 30px;
+  }
+
+  .gato-burbuja {
+    bottom: 105px;
+    min-width: 125px;
+    padding: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gato-boton,
+  .gato-cola {
+    animation: none;
+  }
+}
