@@ -1,16 +1,27 @@
-# React + Vite
+# Tienda de Ropa Alternativa - ノスタルジー (Nostalgia)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Este es un proyecto de E-commerce (Frontend) desarrollado como parte de la Evaluación 2 de Desarrollo Fullstack II.
 
-Currently, two official plugins are available:
+## Características
+- Catálogo de productos con imágenes, precios y filtros por categoría.
+- Carrito de compras funcional (agregar, eliminar y calcular totales).
+- Flujo de Checkout con formulario de datos de envío.
+- Persistencia de datos simulada con `localStorage`.
+- Diseño responsivo y estilizado con Bootstrap + CSS personalizado.
+- Pruebas unitarias implementadas con Vitest y React Testing Library.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tecnologías Utilizadas
+- **React.js** (con Vite)
+- **React Router DOM** (navegación SPA)
+- **Bootstrap** (diseño responsivo)
+- **Vitest** (testing)
 
-## React Compiler
+## Despliegue
+La aplicación está compilada y desplegada en una instancia **AWS EC2** (Amazon Linux 2023) y servida con el servidor web **Nginx**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔗 **URL de la aplicación:** [http://184.194.225.95](http://184.194.225.95)
+*(Nota: La IP pública cambia si la instancia EC2 se reinicia. Si no carga, por favor avisar para encenderla y actualizar el enlace).*
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Integrantes
+- Britany Carreño
+- Enzo Palomino
